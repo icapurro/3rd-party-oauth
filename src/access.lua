@@ -187,8 +187,8 @@ function get_callback_url(conf)
     if not port then
         port = kong.request.get_port()
     end
-
-    return scheme .. "://" .. host ..  ":" .. port .. conf.path_prefix .. "/oauth2/callback"
+    -- TODO: put back `.. ":" .. port` when forwarded port is fixed
+    return scheme .. "://" .. host .. conf.path_prefix .. "/oauth2/callback"
 end
 
 return _M
